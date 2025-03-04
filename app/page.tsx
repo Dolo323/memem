@@ -45,7 +45,6 @@ function Background() {
       sizes="100vw"
       style={{
         objectFit: "cover",
-        position: "fixed",
         zIndex: -1,
       }}
     />
