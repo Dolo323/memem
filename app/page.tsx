@@ -59,7 +59,7 @@ export default function Home() {
       <div className="relative z-10">
         <Header />
         <main className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {people.map((person, index) => (
               <div key={index} className="w-full">
                 <Person
