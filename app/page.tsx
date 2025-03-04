@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import mountains from "../public/mountains.jpg";
 import Header from "./components/header";
@@ -28,7 +26,7 @@ const people = [
     bio: "На фронт ушел в июле 1944 г. Воевал стрелком в 89 стрелковом полку, 65 стрелковой дивизии, 3 Белорусского фронта 65 Армии. Был тяжело ранен по Кениксбергом.Имеет несколько наград.В том числе медаль ЗА БОЕВЫЕ ЗАСЛУГИ:Демобилизовался 25 августа 1945 года.",
   },
   {
-    name: "Соколов Виктор Алексеевич",
+    name: "Соколов Виктор Алексеевна",
     birthDate: "22.06.1925",
     deathDate: "1998",
     imageUrl: "Sokolov.png",
@@ -47,6 +45,12 @@ function Background() {
       sizes="100vw"
       style={{
         objectFit: "cover",
+        position: "absolute", // Добавьте абсолютное позиционирование
+        top: 0, // Расположите картинку сверху
+        left: 0, // Расположите картинку слева
+        width: "100%", // Установите ширину на 100%
+        height: "100%", // Установите высоту на 100%
+        zIndex: -1, // Отправьте картинку на задний план
       }}
       className="z-0"
     />
@@ -56,10 +60,7 @@ function Background() {
 export default function Home() {
   return (
     <div className="relative min-h-screen">
-      {/* Background Image */}
-      <Background />
-
-      {/* Content */}
+      {/* Контент */}
       <div className="relative z-10">
         <Header />
 
@@ -79,6 +80,9 @@ export default function Home() {
           </div>
         </main>
       </div>
+
+      {/* Фоновая картинка */}
+      <Background />
     </div>
   );
 }
