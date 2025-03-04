@@ -45,14 +45,9 @@ function Background() {
       sizes="100vw"
       style={{
         objectFit: "cover",
-        position: "absolute", // Добавьте абсолютное позиционирование
-        top: 0, // Расположите картинку сверху
-        left: 0, // Расположите картинку слева
-        width: "100%", // Установите ширину на 100%
-        height: "100%", // Установите высоту на 100%
-        zIndex: -1, // Отправьте картинку на задний план
+        position: "fixed",
+        zIndex: -1,
       }}
-      className="z-0"
     />
   );
 }
@@ -60,14 +55,13 @@ function Background() {
 export default function Home() {
   return (
     <div className="relative min-h-screen">
-      {/* Контент */}
+      <Background />
       <div className="relative z-10">
         <Header />
-
-        <main>
-          <div className="flex flex-wrap">
+        <main className="container mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 gap-8">
             {people.map((person, index) => (
-              <div key={index} className="flex-1 basis-1/2 box-border p-[70px]">
+              <div key={index} className="w-full">
                 <Person
                   name={person.name}
                   birthDate={person.birthDate}
@@ -80,9 +74,6 @@ export default function Home() {
           </div>
         </main>
       </div>
-
-      {/* Фоновая картинка */}
-      <Background />
     </div>
   );
 }
