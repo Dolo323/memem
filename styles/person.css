@@ -1,0 +1,25 @@
+.person {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.portrait {
+  width: 350px;
+  height: 350px;
+  
+  margin-right: 20px;
+}
+
+.info {
+  flex: 1;
+}
+
+.info h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.info p {
+  margin: 5px 0;
+}
