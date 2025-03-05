@@ -42,7 +42,7 @@ function Background() {
       placeholder="blur"
       quality={100}
       fill
-      sizes="100vw"
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       style={{
         objectFit: "cover",
         zIndex: -1,
@@ -58,7 +58,7 @@ export default function Home() {
       <div className="relative z-10">
         <Header />
         <main className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {people.map((person, index) => (
               <div key={index} className="w-full">
                 <Person
