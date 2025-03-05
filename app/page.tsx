@@ -44,7 +44,7 @@ function Background() {
       fill
       sizes="100vw"
       style={{
-        objectFit: "fill",
+        objectFit: "cover",
       }}
       className="z-0"
     />
@@ -64,7 +64,7 @@ export default function Home() {
             {people.map((person, index) => (
               <div
                 key={index}
-                className="flex-1 p-4 sm:basis-full md:basis-1/2 lg:basis-1/2 box-border"
+                className="w-full p-4 sm:w-full md:w-1/2 lg:w-1/2 box-border"
               >
                 <Person
                   name={person.name}
