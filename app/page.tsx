@@ -60,11 +60,12 @@ export default function Home() {
         <Header />
 
         <main>
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap justify-center">
             {people.map((person, index) => (
               <div
                 key={index}
-                className="w-full p-4 sm:w-full md:w-1/2 lg:w-1/2 box-border"
+                className="w-full p-4 md:w-1/2 lg:w-1/2 box-border"
+                style={{ minWidth: '300px' }}
               >
                 <Person
                   name={person.name}
