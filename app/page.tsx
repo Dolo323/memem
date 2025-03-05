@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import mountains from "../public/mountains.jpg";
 import Header from "./components/header";
@@ -23,9 +21,9 @@ const people = [
   {
     name: "Шитов Петр Иванович",
     birthDate: "1907",
-    deathDate: "08.25.1945",
+    deathDate: "1942",
     imageUrl: "Shitov.png",
-    bio: "Родился в 1907, д. Постниково . Был рядовым, 33 корпуса. Жена Шитова А. И. В госпиталь № 1789 в городе Сясьстрой доставлен 24 марта 1942 по обморожению, умер от ран 29 марта 1942. Захоронен в городе Сясьстрой Волховского района на братской могиле.",
+    bio: "На фронт ушел в июле 1944 г. Воевал стрелком в 89 стрелковом полку, 65 стрелковой дивизии, 3 Белорусского фронта 65 Армии. Был тяжело ранен по Кениксбергом.Имеет несколько наград.В том числе медаль ЗА БОЕВЫЕ ЗАСЛУГИ:Демобилизовался 25 августа 1945 года.",
   },
   {
     name: "Соколов Виктор Алексеевич",
@@ -56,17 +54,18 @@ function Background() {
 export default function Home() {
   return (
     <div className="relative min-h-screen">
-      {/* Background Image */}
       <Background />
 
-      {/* Content */}
       <div className="relative z-10">
         <Header />
 
         <main>
           <div className="flex flex-wrap">
             {people.map((person, index) => (
-              <div key={index} className="flex-1 basis-1/2 box-border p-[70px]">
+              <div
+                key={index}
+                className="flex-1 p-4 sm:basis-full md:basis-1/2  box-border"
+              >
                 <Person
                   name={person.name}
                   birthDate={person.birthDate}
