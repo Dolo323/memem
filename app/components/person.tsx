@@ -5,37 +5,29 @@ interface PersonProps {
   name: string;
   birthDate: string;
   deathDate: string;
-  imageUrl: string; // Путь к портрету
+  imageUrl: string;
   bio: string;
 }
 
 const Person = ({ name, birthDate, deathDate, imageUrl, bio }: PersonProps) => {
   return (
-    <div
-      className="person-container"
-      style={{
-        backgroundImage: "url(/images/2.jpg)", // Фоновое изображение
-        backgroundSize: "cover", // Масштабируем фон
-        backgroundPosition: "center", // Центрируем фон
-        padding: "20px", // Отступы для контента
-      }}
-    >
+    <div className="person-container">
       <div className="person">
-        {/* Портрет */}
-        <Image
-          src={`/images/${imageUrl}`} // Путь к портрету
-          alt={name}
-          width={150} // Увеличим размер портрета
-          height={150}
-          className="portrait"
-        />
-        {/* Информация о человеке */}
+        <div className="portrait-container">
+          <Image
+            src={`/images/${imageUrl}`}
+            alt={name}
+            width={150}
+            height={150}
+            className="portrait"
+          />
+        </div>
         <div className="info">
-          <h2>{name}</h2>
-          <p>
-            {birthDate} - {deathDate}
+          <h2 className="name">{name}</h2>
+          <p className="dates">
+            {birthDate} - {deathDate || "настоящее время"}
           </p>
-          <p>{bio}</p>
+          <p className="bio">{bio}</p>
         </div>
       </div>
     </div>

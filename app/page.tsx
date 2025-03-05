@@ -56,24 +56,20 @@ export default function Home() {
     <div className="relative min-h-screen">
       <Background />
 
-      <div className="relative z-10">
+      <div className="relative z-10 min-h-screen overflow-y-auto">
         <Header />
 
-        <main>
-          <div className="flex flex-wrap justify-center">
+        <main className="container mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {people.map((person, index) => (
-              <div
+              <Person
                 key={index}
-                className="w-full p-4 sm:w-full md:w-1/2 lg:w-1/2 box-border"
-              >
-                <Person
-                  name={person.name}
-                  birthDate={person.birthDate}
-                  deathDate={person.deathDate}
-                  imageUrl={person.imageUrl}
-                  bio={person.bio}
-                />
-              </div>
+                name={person.name}
+                birthDate={person.birthDate}
+                deathDate={person.deathDate}
+                imageUrl={person.imageUrl}
+                bio={person.bio}
+              />
             ))}
           </div>
         </main>

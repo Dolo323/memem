@@ -1,25 +1,46 @@
-.person {
-  display: flex;
+.person-container {
+  background-image: url('/images/2.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  align-items: center;
 }
 
-.portrait {
-  width: 350px;
-  height: 350px;
 
-  margin-right: 20px;
-}
+
+
 
 .info {
-  flex: 1;
+  text-align: center;
 }
 
-.info h2 {
-  margin: 0;
-  font-size: 1.2rem;
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.info p {
-  margin: 5px 0;
+.dates {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.bio {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .person {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  
+
+  .info {
+    text-align: left;
+  }
 }
