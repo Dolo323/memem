@@ -64,7 +64,7 @@ export default function Home() {
             {people.map((person, index) => (
               <div
                 key={index}
-                className="flex-1 p-4 sm:basis-full md:basis-1/2  box-border"
+                className="flex-1 p-4 sm:basis-full md:basis-1/2 lg:basis-1/2 box-border"
               >
                 <Person
                   name={person.name}
