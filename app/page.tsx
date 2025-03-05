@@ -21,7 +21,7 @@ const people = [
   {
     name: "Шитов Петр Иванович",
     birthDate: "1907",
-    deathDate: "1942",
+    deathDate: "08.25.1945",
     imageUrl: "Shitov.png",
     bio: "На фронт ушел в июле 1944 г. Воевал стрелком в 89 стрелковом полку, 65 стрелковой дивизии, 3 Белорусского фронта 65 Армии. Был тяжело ранен по Кениксбергом.Имеет несколько наград.В том числе медаль ЗА БОЕВЫЕ ЗАСЛУГИ:Демобилизовался 25 августа 1945 года.",
   },
@@ -58,7 +58,7 @@ export default function Home() {
       <div className="relative z-10">
         <Header />
         <main className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto">
             {people.map((person, index) => (
               <div key={index} className="w-full">
                 <Person
