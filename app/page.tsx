@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import mountains from "../public/mountains.jpg";
 import Header from "./components/header";
@@ -23,7 +25,7 @@ const people = [
     birthDate: "1907",
     deathDate: "08.25.1945",
     imageUrl: "Shitov.png",
-    bio: "На фронт ушел в июле 1944 г. Воевал стрелком в 89 стрелковом полку, 65 стрелковой дивизии, 3 Белорусского фронта 65 Армии. Был тяжело ранен по Кениксбергом.Имеет несколько наград.В том числе медаль ЗА БОЕВЫЕ ЗАСЛУГИ:Демобилизовался 25 августа 1945 года.",
+    bio: "Родился в 1907, д. Постниково . Был рядовым, 33 корпуса. Жена Шитова А. И. В госпиталь № 1789 в городе Сясьстрой доставлен 24 марта 1942 по обморожению, умер от ран 29 марта 1942. Захоронен в городе Сясьстрой Волховского района на братской могиле.",
   },
   {
     name: "Соколов Виктор Алексеевич",
@@ -42,11 +44,11 @@ function Background() {
       placeholder="blur"
       quality={100}
       fill
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      sizes="100vw"
       style={{
         objectFit: "cover",
-        zIndex: -1,
       }}
+      className="z-0"
     />
   );
 }
@@ -54,13 +56,17 @@ function Background() {
 export default function Home() {
   return (
     <div className="relative min-h-screen">
+      {/* Background Image */}
       <Background />
+
+      {/* Content */}
       <div className="relative z-10">
         <Header />
-        <main className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <main>
+          <div className="flex flex-wrap">
             {people.map((person, index) => (
-              <div key={index} className="w-full">
+              <div key={index} className="flex-1 basis-1/2 box-border p-[70px]">
                 <Person
                   name={person.name}
                   birthDate={person.birthDate}
