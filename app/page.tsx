@@ -44,7 +44,7 @@ function Background() {
       fill
       sizes="100vw"
       style={{
-        objectFit: "cover",
+        objectFit: "fill",
       }}
       className="z-0"
     />
