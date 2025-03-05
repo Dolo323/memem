@@ -64,8 +64,7 @@ export default function Home() {
             {people.map((person, index) => (
               <div
                 key={index}
-                className="w-full p-4 md:w-1/2 lg:w-1/2 box-border"
-                style={{ minWidth: '300px' }}
+                className="w-full p-4 sm:w-full md:w-1/2 lg:w-1/2 box-border"
               >
                 <Person
                   name={person.name}
